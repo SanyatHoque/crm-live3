@@ -21,11 +21,11 @@ app = dash.Dash(
 )
 server = app.server
 
-df  = pd.read_csv("intro_bees.csv")
+#df  = pd.read_csv("intro_bees.csv")
 ####Start connecting to Postgres
-#engine = create_engine('postgresql+psycopg2://postgres:1234@localhost/test')
-#df = pd.read_sql_table("productlist3",engine)
-#df = df.drop_duplicates()
+engine = create_engine('postgresql+psycopg2://postgres:1234@localhost/test')
+df = pd.read_sql_table("productlist3",engine)
+df = df.drop_duplicates()
 ####Ending connecting to Postgres
 
 x1 = DataFrame(df['Object ID'].unique())
